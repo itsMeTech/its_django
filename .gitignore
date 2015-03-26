@@ -1,4 +1,11 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+
+# eclipse IDE config
 .project
 .pydevproject
+
+# local test database
 /db.sqlite3
-*/__pycache__/
+
