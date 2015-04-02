@@ -21,11 +21,15 @@ class UserProfile(models.Model):
     last_name = models.CharField(max_length=100)
     date_of_birth = models.DateField(null=True)
     
+    def __str__(self):
+        return "%s %s" % (self.first_name, self.last_name)
 
 
 class Address(models.Model):
     created = models.DateTimeField(auto_now_add=True)
     modified = models.DateTimeField(auto_now=True)
+    
+    userProfile = models.ForeignKey(UserProfile)
     
     BILLING = 'bill'
     SHIPPING = 'ship'
@@ -36,7 +40,6 @@ class Address(models.Model):
                             (BOTH, 'Both')
                             )
     
-    #user = models.ForeignKey(AuthUser)
     street = models.CharField(max_length=100)
     street_number = models.CharField(max_length=10)
     zip = models.CharField(max_length=5)
@@ -46,4 +49,7 @@ class Address(models.Model):
     address_type = models.CharField(max_length=4,
                                       choices=ADDRESS_TYPE_CHOICES,
                                       default=BOTH)
+    
+    def __str__(self):
+        return "%s %s, %s %s" % (self.zip, self.city, self.street, self.street_number)
     

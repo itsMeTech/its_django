@@ -1,0 +1,32 @@
+[
+  {
+    "model": "my_profile.UserProfile",
+    "pk": 1,
+    "fields": {
+	    "created": "2015-03-25 16:48+0100",
+	    "modified": "2015-03-25 16:48+0100",
+	   	"user": "1",
+	   	"gender": "m",
+	   	"date_of_birth": "1940-10-09",
+	   	"title": "Dr.",
+	    "first_name": "John",
+	    "last_name": "Lennon"
+    }
+  },
+  {
+  	"model": "my_profile.Address",
+  	"pk": "1",
+  	"fields": {
+	    "created": "2015-03-25 16:48+0100",
+	    "modified": "2015-03-25 16:48+0100",
+	   	"userProfile": "1",
+	   	"street": "Alibabastraße",
+    	"street_number": "12b",
+    	"zip": "12345",
+    	"city": "Berlin",
+    	"country": "Germany",
+    	"address_type": "BOTH"
+  	}
+  }
+]
+
